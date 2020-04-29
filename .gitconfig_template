@@ -1,0 +1,8 @@
+[user]
+	name = Vsevolod Glumov
+	email = @@@
+[color]
+	ui = auto
+[core]
+	editor = vim
+	excludesfile = $HOME/.gitignore_global
