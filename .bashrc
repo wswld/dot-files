@@ -1,3 +1,15 @@
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
+HISTCONTROL=ignoreboth
+
+shopt -s histappend
+
+HISTSIZE=1000
+HISTFILESIZE=2000
+
 force_color_prompt=yes
 
 export CLICOLOR=1
