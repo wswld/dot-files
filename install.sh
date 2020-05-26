@@ -6,7 +6,7 @@ if ! [ -f .gitconfig ]; then
 fi
 
 if hash apt-get 2>/dev/null; then
-    apt-get install bash-completion
+    sudo apt-get install bash-completion
 elif hash brew 2>/dev/null; then
     brew install bash-completion
 fi
