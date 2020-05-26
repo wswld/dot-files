@@ -5,6 +5,12 @@ if ! [ -f .gitconfig ]; then
     sed "s/@@@/$email/g" .gitconfig_template > .gitconfig
 fi
 
+if hash apt-get 2>/dev/null; then
+    apt-get install bash-completion
+elif hash brew 2>/dev/null; then
+    brew install bash-completion
+fi
+
 rm ~/.bash_profile ~/.bashrc ~/.vimrc ~/.gitignore_global ~/.gitconfig \
 ~/.inputrc
 
