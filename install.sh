@@ -1,3 +1,5 @@
+#!/bin/bash
+
 if ! [ -f .gitconfig ]; then
     read -p 'Email: ' email
     sed "s/@@@/$email/g" .gitconfig_template > .gitconfig
@@ -7,7 +9,7 @@ rm ~/.bash_profile ~/.bashrc ~/.vimrc ~/.gitignore_global ~/.gitconfig \
 ~/.inputrc
 
 curl https://raw.githubusercontent.com/wswld/context-color/master/context-color > context-color
-chmod 775 context-color
+chmod 744 context-color
 
 mkdir ~/bin
 ln -s `pwd`/context-color ~/bin/context-color
