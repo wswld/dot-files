@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 if ! [ -f .gitconfig ]; then
     read -p 'Email: ' email
