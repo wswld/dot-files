@@ -29,5 +29,3 @@ ln -s `pwd`/.vimrc ~/.vimrc
 ln -s `pwd`/.gitignore_global ~/.gitignore_global
 ln -s `pwd`/.gitconfig ~/.gitconfig
 ln -s `pwd`/.inputrc ~/.inputrc
-
-source ~/.bashrc
