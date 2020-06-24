@@ -7,8 +7,10 @@ fi
 
 if hash apt-get 2>/dev/null; then
     sudo apt-get install bash-completion
+    sudo apt-get install tree
 elif hash brew 2>/dev/null; then
     brew install bash-completion
+    brew install tree
 fi
 
 rm ~/.bash_profile ~/.bashrc ~/.vimrc ~/.gitignore_global ~/.gitconfig \
@@ -19,6 +21,7 @@ chmod 744 context-color
 
 mkdir ~/bin
 ln -s `pwd`/context-color ~/bin/context-color
+ln -s `pwd`/dotfiles ~/bin/dotfiles
 
 ln -s `pwd`/.bashrc ~/.bashrc
 ln -s ~/.bashrc ~/.bash_profile
