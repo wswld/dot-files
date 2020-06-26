@@ -11,3 +11,6 @@ set smarttab    " At <Tab> at beginning line inserts spaces set in shiftwidth
 " Displays '-' for trailing space, '>-' for tabs and '_' for non breakable space
 set listchars=tab:>-,trail:•,nbsp:_
 set list
+
+" selection colors
+hi Visual term=reverse cterm=reverse ctermbg=0
