@@ -11,7 +11,7 @@ sub_help(){
 }
   
 sub_version(){
-    cat ~/dotfiles/VERSION
+    cat ~/dotfiles/VERSION; echo ".$(git --git-dir ~/dotfiles/.git --work-tree ~/dotfiles/ rev-parse --short HEAD)"
 }
   
 sub_update(){
