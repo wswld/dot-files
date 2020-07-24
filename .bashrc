@@ -28,6 +28,8 @@ else
     h=$( hostname )
 fi
 
+echo "$(context-color)░░░▓▓▓ $(context-color --force 255)dotfiles $(context-color --context 'date +%U')$(dotfiles version)"
+
 alias ll='ls -alF'
 alias rc='source ~/.bashrc'
 alias restart_networking='sudo ifconfig en0 down && sudo ifconfig en0 up'
