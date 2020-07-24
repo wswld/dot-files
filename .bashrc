@@ -28,7 +28,7 @@ else
     h=$( hostname )
 fi
 
-echo "$(context-color)░░░▓▓▓ $(context-color --force 255)dotfiles $(context-color --context 'date +%U')$(dotfiles version)"
+echo "$(context-color)░░░▓▓▓ $(context-color --force 255)dotfiles $(context-color --context 'hostname; date +%U')$(dotfiles version)"
 
 alias ll='ls -alF'
 alias rc='source ~/.bashrc'
