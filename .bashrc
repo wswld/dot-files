@@ -21,6 +21,9 @@ force_color_prompt=yes
 export CLICOLOR=1
 export EDITOR=vim
 
+# remove the annoying zsh warning on Mac
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
 if [[ -f "/etc/salt/minion_id" ]]; then
     echo 'minion_id file found - using '$h' instead of hostname'
     h=$( cat /etc/salt/minion_id )
