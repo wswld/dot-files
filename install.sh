@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
 
-if ! [ -f .gitconfig ]; then
+if ! [ -f .email ]; then
     read -p 'Email: ' email
-    sed "s/@@@/$email/g" .gitconfig_template > .gitconfig
+    echo $email > .email
+else
+    email=$( cat .email )
+    echo $email
 fi
 
 if hash apt-get 2>/dev/null; then
@@ -15,6 +18,8 @@ fi
 
 rm ~/.bash_profile ~/.bashrc ~/.vimrc ~/.gitignore_global ~/.gitconfig \
 ~/.inputrc
+
+sed "s/@@@/$email/g" .gitconfig_template > .gitconfig
 
 curl https://raw.githubusercontent.com/wswld/context-color/master/context-color > context-color
 chmod 744 context-color
