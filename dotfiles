@@ -11,7 +11,8 @@ sub_help(){
 }
   
 sub_version(){
-    echo -ne "$(git log -n1 --pretty='format:%cd' --date=format:'%y.%U')"; echo ".$(git --git-dir ~/dotfiles/.git --work-tree ~/dotfiles/ rev-parse --short HEAD)"
+    echo -ne "$(git --git-dir ~/dotfiles/.git --work-tree ~/dotfiles/ log -n1 --pretty='format:%cd' --date=format:'%y.%U')"; 
+    echo ".$(git --git-dir ~/dotfiles/.git --work-tree ~/dotfiles/ rev-parse --short HEAD)"
 }
   
 sub_update(){
