@@ -11,9 +11,11 @@ fi
 if hash apt-get 2>/dev/null; then
     sudo apt-get install bash-completion
     sudo apt-get install tree
+    sudo apt-get install rg
 elif hash brew 2>/dev/null; then
     brew install bash-completion
     brew install tree
+    brew install rg
 fi
 
 rm ~/.bash_profile ~/.bashrc ~/.vimrc ~/.gitignore_global ~/.gitconfig \
