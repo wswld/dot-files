@@ -11,6 +11,9 @@ fi
 
 HISTCONTROL=ignoreboth
 
+
+export PATH=/usr/local/opt/python/libexec/bin:$PATH
+
 shopt -s histappend
 
 HISTSIZE=1000
@@ -31,7 +34,27 @@ else
     h=$( hostname )
 fi
 
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+
 echo "$(context-color)░░░▓▓▓ $(context-color --force 255)dotfiles $(context-color --context 'hostname; date +%U')$(dotfiles version)$(context-color --force 255)"
+
+pdfcompress ()
+{
+   gs -q -dNOPAUSE -dBATCH -dSAFER -sDEVICE=pdfwrite -dCompatibilityLevel=1.3 -dPDFSETTINGS=/screen -dEmbedAllFonts=true -dSubsetFonts=true -dColorImageDownsampleType=/Bicubic -dColorImageResolution=144 -dGrayImageDownsampleType=/Bicubic -dGrayImageResolution=144 -dMonoImageDownsampleType=/Bicubic -dMonoImageResolution=144 -sOutputFile=$1.compressed.pdf $1; 
+}
+
+export PATH="$HOME/.pyenv/bin:$PATH"
+export PATH="/usr/local/bin:$PATH"
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/bzip2/lib"
+export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include"
+
 
 alias ll='ls -alF'
 alias rc='source ~/.bashrc'
